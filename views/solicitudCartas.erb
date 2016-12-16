@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>BlackJack</h1>
+        <fieldset >
+            <legend>Jugaror:</legend>
+            <form action="/solicitarCarta" method="GET">
+                <label id="lblCartaSolicitada" name = "lblCartaSolicitada" >Carta Solicitada : <%= session["cartaGenerada"] %></label>
+                
+                <input type = "submit" value = "Solicitar Cartas" id = "btnSolicitarCarta" name = "btnSolicitarCarta">
+            </form>
+        </fieldset>
+
+    </body>
+</html>
