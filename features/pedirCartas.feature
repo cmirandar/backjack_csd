@@ -17,6 +17,9 @@ Scenario: debo poder tener la opcion "Solicitar Cartas"
   Then debo ver "Solicitar Cartas"
   
 Scenario: debo solicitar cartas
-  Given que el "Jugador" solicite una carta
+  Given que "Jugador" solicite una carta
   Then se acumula el puntaje del "Jugador"
   
+Scenario: el jugador detenga su jugada la pc debe de generar automaticamente la suya
+  Given que Jugador detenga su jugada
+  Then se acumula el puntaje del "Pc"

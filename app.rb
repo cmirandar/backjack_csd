@@ -26,13 +26,20 @@ get '/solicitarCarta' do
     valor = params["valor"]
     random = Random.rand(13)
     
+    
     if valor == '1' 
-        session["acumuladoJugador"] = random + session["acumuladoJugador"]
-        session["cartaGeneradaJugador"] = random
-    else
-        session["acumuladoPC"] = random + session["acumuladoPC"]
-        session["cartaGeneradaPC"] = random
-    end
+       session["acumuladoJugador"] = random + session["acumuladoJugador"]
+       session["cartaGeneradaJugador"] = random.to_s + "+" + session["cartaGeneradaJugador"]
+   else
+        numeroJugadas = 3
+        i = 0
+        while i < numeroJugadas  do
+            session["acumuladoPC"] = random + session["acumuladoPC"]
+            session["cartaGeneradaPC"] = random.to_s + "+" + session["cartaGeneradaPC"]
+           i +=1
+        end
+        
+   end
     
     
     erb :solicitudCartas

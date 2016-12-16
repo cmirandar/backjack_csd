@@ -11,14 +11,14 @@ Given(/^que comienzo el juego$/) do
   click_button("btnComenzar")
 end
 
-Given(/^que el "([^"]*)" solicite una carta$/) do |jugador|
+Given(/^que "([^"]*)" solicite una carta$/) do |jugador|
       visit '/'
     expect(page.body).to match /BlackJack/m
     click_button("btnComenzar")
 end
 
 Then(/^se acumula el puntaje del "([^"]*)"$/) do |jugador|
-  click_button("btnSolicitarCarta#{jugador}")
+  click_button("btnSolicitarCartaJugador")
 end
     
 
@@ -32,4 +32,11 @@ end
 
 When(/^termina el juego$/) do
     click_button("resultado")
+end
+
+Given(/^que Jugador detenga su jugada$/) do
+          visit '/'
+    expect(page.body).to match /BlackJack/m
+    click_button("btnComenzar")
+  click_button("btnPararJugada")
 end

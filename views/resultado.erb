@@ -4,11 +4,8 @@
         <h1 align="center"><%= session["resultado"]%></h1>
         <h2 align="center"><%= session["ganador"]%></h2>
         
-        <!--
-        <form method="POST" action="/resultado">
-            <input type="submit" id="resultado" value="resultado" />
-            <input type="text" name="j1"/>
-            <input type="text" name="j2"/>
-        </form>-->
+         <form method="get" action="/comenzar" align="center">
+           <input type="submit" id="reiniciar" value="reiniciar" />
+       </form>
     </body>
 </html>
