@@ -9,7 +9,7 @@ Scenario: Debe tener el titulo "BlackJack"
   
 Scenario: debe tener la opcion "Comenzar Juego"
   Given que abro la aplicacion
-  Then debo ver "Comenzar Juego"
+  Then debo ver "Comenzar Juego" 
   
 Scenario: debo poder tener la opcion "Solicitar Cartas"
   Given que abro la aplicacion

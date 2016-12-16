@@ -10,5 +10,14 @@ enable :sessions
 set :session_secret, 'thisIsAKleerSecret'
 
 get '/' do
-	
+	erb :index
+end
+
+get '/comenzar' do
+    erb :solicitudCartas
+end
+
+get '/solicitarCarta' do
+    session["cartaGenerada"] = 6
+    erb :solicitudCartas
 end
