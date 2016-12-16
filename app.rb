@@ -15,11 +15,24 @@ get '/' do
 end
 
 get '/comenzar' do
+    session["acumuladoJugador"]  = 0
+    session["acumuladoPC"]  = 0
     erb :solicitudCartas
 end
 
 get '/solicitarCarta' do
-    session["cartaGenerada"] = 6
+    valor = params["valor"]
+    random = Random.rand(21)
+    
+    if valor == '1' 
+        session["acumuladoJugador"] = random + session["acumuladoJugador"]
+        session["cartaGeneradaJugador"] = random
+    else
+        session["acumuladoPC"] = random + session["acumuladoPC"]
+        session["cartaGeneradaPC"] = random
+    end
+    
+    
     erb :solicitudCartas
 end
 
