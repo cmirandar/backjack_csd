@@ -5,7 +5,7 @@
             <legend>Jugador:</legend>
             <form action="/solicitarCarta" method="GET">
                 <label id="lblCartaSolicitada" name = "lblCartaSolicitada" >Carta Solicitada : <%= session["cartaGeneradaJugador"] %></label>
-                <input type = "text" name = "j11" value = "<%= session["acumuladoJugador"] %>"/>
+                <input type = "text" name = "j11" value = "<%= session["acumuladoJugador"] %>" disabled/>
                 <input type = "hidden" value = "1" name = "valor" />
                 <input type = "submit" value = "Solicitar Cartas" id = "btnSolicitarCartaJugador" name = "btnSolicitarCartaJugador">
             </form>
@@ -15,7 +15,7 @@
             <legend>PC:</legend>
             <form action="/solicitarCarta" method="GET">
                 <label id="lblCartaSolicitada" name = "lblCartaSolicitada" >Carta Solicitada : <%= session["cartaGeneradaPC"] %></label>
-                <input type = "text" name = "j21" value = "<%= session["acumuladoPC"] %>"/>
+                <input type = "text" name = "j21" value = "<%= session["acumuladoPC"] %>" disabled/>
                 <input type = "hidden" value ="2" name = "valor" />
                 <input type = "submit" value = "Solicitar Cartas" id = "btnSolicitarCartaPc" name = "btnSolicitarCartaPc">
             </form>
