@@ -8,6 +8,7 @@
                 <input type = "text" name = "j11" value = "<%= session["acumuladoJugador"] %>" disabled/>
                 <input type = "hidden" value = "1" name = "valor" />
                 <input type = "submit" value = "Solicitar Cartas" id = "btnSolicitarCartaJugador" name = "btnSolicitarCartaJugador">
+                <%= session["cartaComodin"] %>
             </form>
             <form action="/solicitarCarta" method="GET">
                 <input type = "submit" value = "Detener Jugada" id = "btnPararJugada" name = "btnPararJugada">
