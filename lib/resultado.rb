@@ -3,10 +3,22 @@ class Resultado
     
     
     def verResultado j1, j2
-        if j1>j2
-            return "Gana Jugador"
-         else
-            return "Gana PC"
+         if j1>21&&j2>21
+             return "Ambos pasaron 21! No hay ganador"
+         elsif j1>j2
+            if j1>21
+                return "Gana PC"
+            else
+                return "Gana Jugador"  
+            end
+         elsif j2>j1
+            if j2>21
+                return "Gana Jugador"
+            else
+                return "Gana PC"  
+            end
+        elsif j2=j1
+            return "EMPATE" 
         end
     end
     

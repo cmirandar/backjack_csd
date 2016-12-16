@@ -16,3 +16,7 @@ Scenario: debo poder tener la opcion "Solicitar Cartas"
   And que comienzo el juego  
   Then debo ver "Solicitar Cartas"
   
+Scenario: debo solicitar cartas
+  Given que el "Jugador" solicite una carta
+  Then se acumula el puntaje del "Jugador"
+  

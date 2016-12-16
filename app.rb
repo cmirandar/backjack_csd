@@ -17,12 +17,14 @@ end
 get '/comenzar' do
     session["acumuladoJugador"]  = 0
     session["acumuladoPC"]  = 0
+    session["cartaGeneradaJugador"] = ''
+    session["cartaGeneradaPC"] = ''
     erb :solicitudCartas
 end
 
 get '/solicitarCarta' do
     valor = params["valor"]
-    random = Random.rand(21)
+    random = Random.rand(13)
     
     if valor == '1' 
         session["acumuladoJugador"] = random + session["acumuladoJugador"]
@@ -37,8 +39,8 @@ get '/solicitarCarta' do
 end
 
 post '/resultado' do
-  jugador1 = params["j1"]
-  jugador2 = params["j2"]
+  jugador1 = session["acumuladoJugador"] #params["j1"]
+  jugador2 = session["acumuladoPC"] #params["j2"]
   session["resultado"] = "#{jugador1}-#{jugador2}"
   resultado = Resultado.new
   session["random"] = resultado.generarRandom
