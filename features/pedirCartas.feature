@@ -16,6 +16,3 @@ Scenario: debo poder tener la opcion "Solicitar Cartas"
   And que comienzo el juego  
   Then debo ver "Solicitar Cartas"
   
-Scenario: debo mostrar la "Carta Solicitada"
-  Given que el jugador solicite una carta
-  Then debe aparecer "Carta Solicitada" : "6"

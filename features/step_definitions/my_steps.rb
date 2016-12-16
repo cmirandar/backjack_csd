@@ -11,20 +11,14 @@ Given(/^que comienzo el juego$/) do
   click_button("btnComenzar")
 end
 
-Given(/^que el jugador solicite una carta$/) do
+Given(/^que el "([^"]*)" solicite una carta$/) do |jugador|
       visit '/'
     expect(page.body).to match /BlackJack/m
     click_button("btnComenzar")
-    click_button("btnSolicitarCarta")
+    click_button("btnSolicitarCarta#{jugador}")
 end
 
-Then(/^debe aparecer "([^"]*)" : "([^"]*)"$/) do |label, numeroCarta|
-          visit '/'
-    expect(page.body).to match /BlackJack/m
-    click_button("btnComenzar")
-    click_button("btnSolicitarCarta")
-  expect(page.body).to match /#{label} : #{numeroCarta}/m
-end
+
 
 Given(/^que da click en Ver resultado$/) do
     visit '/'
