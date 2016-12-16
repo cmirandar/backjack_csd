@@ -25,3 +25,16 @@ Then(/^debe aparecer "([^"]*)" : "([^"]*)"$/) do |label, numeroCarta|
     click_button("btnSolicitarCarta")
   expect(page.body).to match /#{label} : #{numeroCarta}/m
 end
+
+Given(/^que da click en Ver resultado$/) do
+    visit '/'
+end
+
+When(/^defino a "([^"]*)" y "([^"]*)" como resultado$/) do |jugador1, jugador2|
+    fill_in("j1", :with => jugador1) 
+    fill_in("j2", :with => jugador2)
+end
+
+When(/^termina el juego$/) do
+    click_button("resultado")
+end
